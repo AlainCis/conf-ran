@@ -25,6 +25,7 @@ Route::get('conference', [ConferenceController::class,"edit"])->name('conference
 Route::post('conference', [ConferenceController::class,"store"])->name('conference.store')->middleware("auth");
 Route::post('conference', [ConferenceController::class,"update"])->name('conference.update')->middleware("auth");
 Route::resource('reservation', ReservationController::class);
+Route::resource('conference', ConferenceController::class);
 Route::get('/reservation/{conference}/new', [ReservationController::class,'new'])->name('reservation.new')->middleware("auth");
 Route::get('/reservation/{reservation}/valider', [ReservationController::class,'valider'])->name('reservation.valider')->middleware("auth");
 Route::get('/reservation/{reservation}/annuler', [ReservationController::class,'annuler'])->name('reservation.annuler')->middleware("auth");

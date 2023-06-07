@@ -5,7 +5,7 @@
     {{-- <div class="row d-flex justify-content-center align-items-center h-100"> --}}
         @if (session()->has("message"))
             <div class="alert alert-secondary" role="alert">
-                {{ sesion()->get('message') }}
+                {{ session()->get('message') }}
             </div>
         @endif
         <div class="row row-cols-1 row-cols-md-3 g-4">
@@ -26,8 +26,8 @@
                   <small class="text-muted">{{ $conference->dateconf }}</small><br>
                   <a type="button" href="{{ route('reservation.new',['conference'=>$conference]) }}" class="btn btn-success">Réservez</a>
                   @if (Auth::user()->role=='admin')
-                    <button type="button" class="btn btn-primary">Editer</button>
-                    <button type="button" class="btn btn-info">Détails</button>
+                    <a type="button" href="{{ route('conference.edit',['conference'=>$conference]) }}" class="btn btn-primary">Editer</a>
+                    <a type="button" class="btn btn-info">Détails</a>
                   @endif
                 </div>
               </div>

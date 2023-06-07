@@ -67,7 +67,7 @@ class ConferenceController extends Controller
         $validated = $request->validated();
         if ($validated) {
             $conference->update($request->validated());
-            return redirect(route("conference.index"))->with("msg","Conférence actualisée avec succès !");
+            return redirect(route("conference.index"))->with("message","Conférence actualisée avec succès !");
         }else {
             return redirect()->back()->withErrors($validated)->witInput();
         }

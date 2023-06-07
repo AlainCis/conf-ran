@@ -14,9 +14,9 @@
       <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
         <form action="{{route('conference.update',['conference'=>$conference])}}" method="POST">
             @csrf
-            @method('POST')
+            @method('PUT')
           <div class="divider d-flex align-items-center my-4">
-            <p class="text-center fw-bold mx-3 mb-0">NOUVELLE CONFERENCE</p>
+            <p class="text-center fw-bold mx-3 mb-0">EDITION CONFERENCE</p>
           </div>
 
           <!-- Email input -->
@@ -67,7 +67,6 @@
           <div class="text-center text-lg-start mt-4 pt-2">
             <button type="submit" class="btn btn-primary">Valider</button>
           </div>
-
         </form>
       </div>
     </div>
