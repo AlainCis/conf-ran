@@ -27,7 +27,7 @@
                   <a type="button" href="{{ route('reservation.new',['conference'=>$conference]) }}" class="btn btn-success">Réservez</a>
                   @if (Auth::user()->role=='admin')
                     <a type="button" href="{{ route('conference.edit',['conference'=>$conference]) }}" class="btn btn-primary">Editer</a>
-                    <a type="button" class="btn btn-info">Détails</a>
+                    <a type="button" href="{{ route('conference.show',['conference'=>$conference]) }}" class="btn btn-info">Détails</a>
                   @endif
                 </div>
               </div>
