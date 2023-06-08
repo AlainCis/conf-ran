@@ -20,9 +20,14 @@
             <a class="nav-link" href="{{ route('conference.index') }}" tabindex="-1" aria-disabled="true">Toutes les conférences</a>
           </li>
         </ul>
-        <form class="d-flex">
-          <input class="form-control me-2" type="search" placeholder="Rechercher" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Rechercher</button>
+        <form action="{{ route('auth.logout') }}" method="POST" class="d-flex">
+          @csrf
+          @method("DELETE")
+          @auth
+            <label class="form-control me-2"><b>{{ Auth::user()->name }}</b></label>
+            <button type="sub
+            " class="btn btn-outline-success" type="submit">Déconnexion</button>
+          @endauth
         </form>
       </div>
     </div>

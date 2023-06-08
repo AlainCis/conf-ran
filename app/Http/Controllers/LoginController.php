@@ -27,14 +27,18 @@ class LoginController extends Controller
     public function register(){
         return view("auth.register");
     }
+    public function logout(){
+        Auth::logout();
+        return to_route('auth.login')->with("message", "Déconnexion effectuée succès ! Veuiller vous reconnectez");
+    }
     public function doRegister(UserRequest $request){
         $validated = $request->validated();
         if ($validated)
         {
             User::firstOrCreate($validated);
-            return Redirect::to('auth.login')->with("message", "Compte crée avec succès ! </br> Veuiller vous connectez");
+            return to_route('auth.login')->with("message", "Compte crée avec succès ! Veuiller vous connectez");
         }else{
-            return Redirect::to('auth.register')->withErrors();
+            return to_route('auth.register')->withErrors();
         }
     }
 }

@@ -5,7 +5,7 @@
     <div class="row d-flex justify-content-center align-items-center h-100">
         @if (session()->has("message"))
             <div class="alert alert-secondary" role="alert">
-                {{ sesion()->get('message') }}
+                {{ session()->get('message') }}
             </div>
         @endif
       <div class="col-md-9 col-lg-6 col-xl-5">
